@@ -26,7 +26,7 @@ if [ $? -ne 0 ]; then
 	swapon /swapfile
 	echo '/swapfile none swap defaults 0 0' >> /etc/fstab
 else
-	echo 'swapfile found. No changes made.'
+	echo 'swapfile found. Swapoff and Adding swapfile.'
   swapoff -a 
 	fallocate -l ${swapsize} /swapfile
 	chmod 600 /swapfile
